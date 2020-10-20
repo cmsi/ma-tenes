@@ -1,3 +1,9 @@
+tenes (1.1.0-2) unstable; urgency=low
+
+  * Add dependency on python3-toml
+
+ -- Synge Todo <wistaria@phys.s.u-tokyo.ac.jp>  Tue, 20 Oct 2020 13:23:53 +0900
+
 tenes (1.1.0-1) unstable; urgency=low
 
   * Initial release for 1.1.0
