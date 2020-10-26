@@ -1,3 +1,9 @@
+tenes (1.1.0-3) unstable; urgency=low
+
+  * Fix the installation of samples
+
+ -- Synge Todo <wistaria@phys.s.u-tokyo.ac.jp>  Mon, 26 Oct 2020 18:38:16 +0900
+
 tenes (1.1.0-2) unstable; urgency=low
 
   * Add dependency on python3-toml
