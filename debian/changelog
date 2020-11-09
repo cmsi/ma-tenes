@@ -1,3 +1,15 @@
+tenes (1.1.1-2) unstable; urgency=low
+
+  * Fix number of processes in sample script
+
+ -- Synge Todo <wistaria@phys.s.u-tokyo.ac.jp>  Mon, 09 Nov 2020 14:36:00 +0900
+
+tenes (1.1.1-1) unstable; urgency=low
+
+  * New upstream version 1.1.1
+
+ -- Synge Todo <wistaria@phys.s.u-tokyo.ac.jp>  Mon, 09 Nov 2020 12:16:03 +0900
+
 tenes (1.1.0-3) unstable; urgency=low
 
   * Fix the installation of samples

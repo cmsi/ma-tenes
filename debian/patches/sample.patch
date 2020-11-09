@@ -1,13 +1,11 @@
---- a/CMakeLists.txt
-+++ b/CMakeLists.txt
-@@ -149,9 +149,5 @@
- endif()
+--- a/sample/01_transverse_field_ising/tutorial_example.py
++++ b/sample/01_transverse_field_ising/tutorial_example.py
+@@ -3,7 +3,7 @@
+ import numpy as np
+ import toml
  
- install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/sample
--    DESTINATION share/tenes/${TENES_VERSION}
--    FILES_MATCHING
--    PATTERN "simple.toml"
--    PATTERN "*.py"
--    PATTERN "output*" EXCLUDE
-+    DESTINATION share/tenes
- )
+-MPI_cmd = "mpiexec -np 2"  # e.g., "mpiexec -np 1"
++MPI_cmd = "mpiexec -np 1"  # e.g., "mpiexec -np 4"
+ 
+ num_hx = 16
+ min_hx = 0.0
