@@ -1,0 +1,59 @@
+--- a/test/fulltest.py.in
++++ b/test/fulltest.py.in
+@@ -107,8 +107,10 @@
+     cmd = []
+     if "@MPIEXEC@":
+         cmd.append("@MPIEXEC@")
++        cmd.extend("@MPIEXEC_PREFLAGS@".split())
+         cmd.append("@MPIEXEC_NUMPROC_FLAG@")
+         cmd.append("1")
++        cmd.extend("@MPIEXEC_POSTFLAGS@".split())
+     cmd.append(join("@CMAKE_BINARY_DIR@", "src", "tenes"))
+     cmd.append("input.toml")
+     subprocess.call(cmd)
+@@ -116,8 +118,10 @@
+     cmd = []
+     if "@MPIEXEC@":
+         cmd.append("@MPIEXEC@")
++        cmd.extend("@MPIEXEC_PREFLAGS@".split())
+         cmd.append("@MPIEXEC_NUMPROC_FLAG@")
+         cmd.append("1")
++        cmd.extend("@MPIEXEC_POSTFLAGS@".split())
+     cmd.append(join("@CMAKE_BINARY_DIR@", "src", "tenes"))
+     cmd.append(inputfile)
+     subprocess.call(cmd)
+--- a/test/restart.py.in
++++ b/test/restart.py.in
+@@ -90,8 +90,10 @@
+ cmd = []
+ if "@MPIEXEC@":
+     cmd.append("@MPIEXEC@")
++    cmd.extend("@MPIEXEC_PREFLAGS@".split())
+     cmd.append("@MPIEXEC_NUMPROC_FLAG@")
+     cmd.append("1")
++    cmd.extend("@MPIEXEC_POSTFLAGS@".split())
+ cmd.append(join("@CMAKE_BINARY_DIR@", "src", "tenes"))
+ cmd.append(inputfile)
+ subprocess.call(cmd)
+@@ -103,8 +105,10 @@
+ cmd = []
+ if "@MPIEXEC@":
+     cmd.append("@MPIEXEC@")
++    cmd.extend("@MPIEXEC_PREFLAGS@".split())
+     cmd.append("@MPIEXEC_NUMPROC_FLAG@")
+     cmd.append("1")
++    cmd.extend("@MPIEXEC_POSTFLAGS@".split())
+ cmd.append(join("@CMAKE_BINARY_DIR@", "src", "tenes"))
+ cmd.append(inputfile)
+ subprocess.call(cmd)
+--- a/test/CMakeLists.txt
++++ b/test/CMakeLists.txt
+@@ -13,7 +13,7 @@
+     target_link_libraries(${testname} PUBLIC tenes_static)
+ 
+     if(ENABLE_MPI)
+-        add_test(NAME ${testname} COMMAND ${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} 1 $<TARGET_FILE:${testname}>)
++        add_test(NAME ${testname} COMMAND ${MPIEXEC} ${MPIEXEC_PREFLAGS} ${MPIEXEC_NUMPROC_FLAG} 1 ${MPIEXEC_POSTFLAGS} $<TARGET_FILE:${testname}>)
+     else()
+         add_test(NAME ${testname} COMMAND $<TARGET_FILE:${testname}>)
+     endif()
