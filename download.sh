@@ -4,8 +4,8 @@
 if [ -f tenes_$VERSION_BASE.orig.tar.gz ]; then
   exit 127
 fi
-wget https://github.com/issp-center-dev/TeNeS/releases/download/v$VERSION_BASE/TeNeS-v$VERSION_BASE.tar.gz
-tar zxvf TeNeS-v$VERSION_BASE.tar.gz
-mv -f TeNeS-v$VERSION_BASE tenes_$VERSION_BASE
-tar zcvf tenes_$VERSION_BASE.orig.tar.gz tenes_$VERSION_BASE
-rm -rf tenes_$VERSION_BASE TeNeS-v$VERSION_BASE.tar.gz
+wget https://github.com/issp-center-dev/TeNeS/releases/download/v${VERSION_BASE}/TeNeS-${VERSION_BASE}.tar.gz
+mkdir tenes-${VERSION_BASE}
+tar zxvf TeNeS-${VERSION_BASE}.tar.gz -C tenes-${VERSION_BASE} --strip-component=1
+tar zcvf tenes_${VERSION_BASE}.orig.tar.gz tenes-${VERSION_BASE}
+rm -rf tenes-${VERSION_BASE} TeNeS-${VERSION_BASE}.tar.gz
