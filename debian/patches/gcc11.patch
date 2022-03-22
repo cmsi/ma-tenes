@@ -1,0 +1,10 @@
+--- a/src/iTPS/load_toml.hpp
++++ b/src/iTPS/load_toml.hpp
+@@ -22,6 +22,7 @@
+ #include <vector>
+ #include <string>
+ 
++#include <limits>
+ #include "cpptoml.h"  // IWYU pragma: export
+ 
+ // IWYU pragma: begin_exports
